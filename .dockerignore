@@ -1,0 +1,24 @@
+# Ignore common Python files
+*.pyc
+__pycache__/
+
+# Ignore development files
+*.env
+*.log
+*.sqlite
+
+# Ignore Docker-related files
+.dockerignore
+Dockerfile
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore version control files
+.git/
+.gitignore
+
+# Ignore other unnecessary files
+*.txt
+*.md

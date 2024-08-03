@@ -4,3 +4,16 @@
 # Ignore Python virtual environment
 venv/
 env/
+
+# Ignore common Python files
+*.pyc
+__pycache__/
+
+# Ignore development files
+*.env
+*.log
+*.sqlite
+
+# Ignore editor-specific files
+.vscode/
+.idea/
