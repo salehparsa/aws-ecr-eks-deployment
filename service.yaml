@@ -3,13 +3,11 @@ kind: Service
 metadata:
   name: hello-app-eks-service
   labels:
-    app: hello-app 
+    app: hello-app
 spec:
   selector:
-    app: hello-app 
-
+    app: hello-app
   ports:
     - port: 5000
       targetPort: 5000
-
   type: LoadBalancer
