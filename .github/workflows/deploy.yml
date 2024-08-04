@@ -8,6 +8,8 @@ on:
 
 env:
   ECR_REPOSITORY: hello-ecr-repository
+  EKS_CLUSTER_NAME: hello-eks-cluster
+  CLUSTER_NAME_SPACE: hello-namespace
   AWS_REGION: eu-central-1
 
 jobs:
@@ -46,5 +48,5 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
         sed -i.bak "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" deployment.yaml && \
-        kubectl apply -f deployment.yaml
-        kubectl apply -f service.yaml
+        kubectl apply -f deployment.yaml -n $CLUSTER_NAME_SPACE
+        kubectl apply -f service.yaml -n $CLUSTER_NAME_SPACE
