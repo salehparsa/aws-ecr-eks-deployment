@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app
+  name: hello-app-deployment
+  namespace: hello-namespace
   labels:
     app: hello-app
 spec:
@@ -20,6 +21,13 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "256m"
+            limits:
+              memory: "512Mi"
+              cpu: "512m"     
   strategy:
     type: RollingUpdate
     rollingUpdate:

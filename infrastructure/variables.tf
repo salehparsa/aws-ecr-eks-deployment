@@ -21,25 +21,32 @@ variable "ecr_repository_name" {
   default     = "hello-ecr-repository"
 }
 
-variable "fargate_profile_name" {
-  description = "The name of the Fargate profile."
-  type        = string
-  default     = "hello-fargate-profile"
+variable "desired_capacity" {
+  description = "Desired number of worker nodes"
+  type        = number
+  default     = 2
 }
-variable "fargate_profiles" {
-  description = "Fargate profiles configurations."
-  type = list(object({
-    name      = string
-    namespace = string
-    labels    = map(string)
-  }))
-  default = [
-    {
-      name      = "hello-fargate-profile"
-      namespace = "hello-app"
-      labels    = {
-        "name": "hello-app"
-      }
-    }
-  ]
+
+variable "min_capacity" {
+  description = "Minimum number of worker nodes"
+  type        = number
+  default     = 1
+}
+
+variable "max_capacity" {
+  description = "Maximum number of worker nodes"
+  type        = number
+  default     = 2
+}
+
+variable "instance_type" {
+  description = "EC2 instance type for the worker nodes"
+  type        = string
+  default     = "t3.medium"
+}
+
+variable "key_name" {
+  description = "EC2 key pair name"
+  type        = string
+  default     = null
 }
