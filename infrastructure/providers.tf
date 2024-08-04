@@ -1,5 +1,13 @@
 terraform {
 
+  backend "s3" {
+    bucket         = "hello-eks-terraform-state"
+    key            = "/"
+    region         = var.region
+    encrypt        = true
+    dynamodb_table = "hello-eks-terraform-state-lock"
+  }  
+
   required_version = "= 1.9.3"
 
   required_providers {

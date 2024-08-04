@@ -1,5 +1,7 @@
 # Ignore Terraform files
 .terraform/
+terraform.tfstate
+.terraform.lock.hcl
 
 # Ignore Python virtual environment
 venv/
