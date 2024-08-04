@@ -36,8 +36,10 @@ variable "fargate_profiles" {
   default = [
     {
       name      = "hello-fargate-profile"
-      namespace = "hello-namespace"
-      labels    = {}
+      namespace = "hello-app"
+      labels    = {
+        "name": "hello-app"
+      }
     }
   ]
 }
