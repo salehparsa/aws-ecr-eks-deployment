@@ -13,7 +13,7 @@ jobs:
   
   build:
     
-    name: Deployment
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
