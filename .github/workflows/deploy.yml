@@ -1,9 +1,10 @@
 name: Deploy on EKS
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
 
 env:
   ECR_REPOSITORY: hello-ecr-repository
@@ -14,7 +15,6 @@ jobs:
   build:
     
     name: Deployment
-    waits-for: build
     runs-on: ubuntu-latest
 
     steps:
