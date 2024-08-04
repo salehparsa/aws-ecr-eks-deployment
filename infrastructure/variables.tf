@@ -36,7 +36,7 @@ variable "fargate_profiles" {
   default = [
     {
       name      = "hello-fargate-profile"
-      namespace = "hello-world-namespace"
+      namespace = "hello-namespace"
       labels    = {}
     }
   ]
