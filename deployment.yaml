@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app-eks-deployment
+  name: hello-app
   labels:
     app: hello-app
 spec:
